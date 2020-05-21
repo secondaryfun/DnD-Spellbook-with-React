@@ -26,26 +26,21 @@ class App extends Component {
       .then((data) => {
         for (let i = 0; i < this.state.count; i++) {
           results.push(data.results[i]);
-          this.setState({
-            results: results,
-            resultsIndex: this.state.resultsIndex + 1,
-          });
         }
-        this.getSpells();
+        return results;
+      })
+      .then((results) => {
+        let urls = results.map(
+          (result) => `https://www.dnd5eapi.co${result.url}`
+        );
+
+        Promise.all(
+          urls.map((url) => fetch(url).then((result) => result.json()))
+        ).then((data) => {
+          this.setState({ spells: data });
+        });
       })
       .catch((error) => console.log("Error", error));
-  };
-
-  getSpells = () => {
-    let urls = this.state.results.map(
-      (result) => `https://www.dnd5eapi.co${result.url}`
-    );
-
-    Promise.all(
-      urls.map((url) => fetch(url).then((result) => result.json()))
-    ).then((data) => {
-      this.setState({ spells: data });
-    });
   };
 
   render() {
@@ -54,7 +49,7 @@ class App extends Component {
         <header className="App-header">
           <h1>Wizard Spellbook</h1>
         </header>
-        <Slider items={this.state.spells} />
+        <Slider items={this.state.results} />
       </div>
     );
   }
