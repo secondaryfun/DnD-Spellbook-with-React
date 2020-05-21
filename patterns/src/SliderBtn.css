@@ -1,0 +1,16 @@
+.disabled {
+  background-color: lightgray;
+}
+
+.sideBtn {
+  height: 3rem;
+  font-size: 2rem;
+}
+
+.btn {
+  border-radius: 5px;
+  background: #454545;
+  color: white;
+  padding: 5px;
+  font-weight: 600;
+}

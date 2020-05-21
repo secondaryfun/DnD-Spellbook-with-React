@@ -1,0 +1,17 @@
+main {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 5%;
+}
+
+p {
+  padding: 5px;
+  border-radius: 5px;
+  width: 30%;
+  box-shadow: 5px 5px 5px grey;
+  margin: 0 1rem;
+  border: lightgray 1px solid;
+}
