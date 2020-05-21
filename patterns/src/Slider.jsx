@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SliderBtn from "./SliderBtn";
 import "./Slider.css";
+import Spell from "./Spell.jsx";
 
 class Slider extends Component {
   constructor() {
@@ -22,9 +23,6 @@ class Slider extends Component {
     });
 
   render() {
-    console.log(
-      this.props.items[0] ? this.props.items[0].name : this.props.items[0]
-    );
     return (
       <main>
         <SliderBtn
@@ -38,6 +36,13 @@ class Slider extends Component {
             ? this.props.items[this.state.index].name
             : ""}
         </p>
+        <Spell
+          data={
+            this.props.items[this.state.index]
+              ? this.props.items[this.state.index].name
+              : ""
+          }
+        />
         <SliderBtn
           func={this.getRightItem}
           i={this.state.index}
