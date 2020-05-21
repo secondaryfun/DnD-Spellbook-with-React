@@ -16,6 +16,8 @@ class App extends Component {
   componentDidMount() {
     this.getPaths();
   }
+  //https://stackoverflow.com/questions/31710768/how-can-i-fetch-an-array-of-urls-with-promise-all
+  //http://joelabrahamsson.com/quickly-mapping-an-array-of-urls-to-responses-with-javascript-asyncawait-and-promiseall/
 
   getPaths = () => {
     let url = "https://www.dnd5eapi.co/api/spells";
@@ -37,6 +39,7 @@ class App extends Component {
         Promise.all(
           urls.map((url) => fetch(url).then((result) => result.json()))
         ).then((data) => {
+          console.log(data);
           this.setState({ spells: data });
         });
       })
@@ -44,12 +47,13 @@ class App extends Component {
   };
 
   render() {
+    console.log(this.state.spells);
     return (
       <div className="App">
         <header className="App-header">
           <h1>Wizard Spellbook</h1>
         </header>
-        <Slider items={this.state.results} />
+        <Slider items={this.state.spells} />
       </div>
     );
   }

@@ -3,37 +3,45 @@ import SliderBtn from "./SliderBtn";
 import "./Slider.css";
 
 class Slider extends Component {
-  constructor(props) {
+  constructor() {
     super();
-    console.log(props);
     this.state = {
-      index: -1,
-      items: [],
+      index: 0,
     };
   }
 
-  getLeftItem = () => {
-    this.setState({ index: this.state.index - 1 });
-  };
+  getLeftItem = () =>
+    this.setState({
+      index: this.state.index ? this.state.index - 1 : this.state.index,
+    });
 
-  getRightItem = () => {
-    this.setState({ index: this.state.index + 1 });
-  };
+  getRightItem = () =>
+    this.setState({
+      index:
+        this.props.items.length > 1 ? this.state.index + 1 : this.state.index,
+    });
 
   render() {
+    console.log(
+      this.props.items[0] ? this.props.items[0].name : this.props.items[0]
+    );
     return (
       <main>
         <SliderBtn
           func={this.getLeftItem}
           i={this.state.index}
-          max={this.state.items.length - 1}
+          max={this.props.items ? this.props.items.length - 1 : 0}
           direction="<"
         />
-        <p className="">{this.state.items[this.state.index]}</p>
+        <p className="">
+          {this.props.items[this.state.index]
+            ? this.props.items[this.state.index].name
+            : ""}
+        </p>
         <SliderBtn
           func={this.getRightItem}
           i={this.state.index}
-          max={this.state.items.length - 1}
+          max={this.props.items ? this.props.items.length - 1 : 0}
           direction=">"
         />
       </main>
