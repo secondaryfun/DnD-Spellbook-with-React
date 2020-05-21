@@ -39,7 +39,7 @@ class App extends Component {
         Promise.all(
           urls.map((url) => fetch(url).then((result) => result.json()))
         ).then((data) => {
-          console.log(data);
+          // console.log(data);
           this.setState({ spells: data });
         });
       })
@@ -47,7 +47,7 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.state.spells);
+    // console.log(this.state.spells);
     return (
       <div className="App">
         <header className="App-header">

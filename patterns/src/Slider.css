@@ -1,17 +1,26 @@
-main {
+.flex-center,
+.btn-box {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   padding: 1rem;
   margin-bottom: 5%;
 }
 
-p {
+.info-box {
   padding: 5px;
   border-radius: 5px;
-  width: 30%;
+  width: 100%;
   box-shadow: 5px 5px 5px grey;
   margin: 0 1rem;
   border: lightgray 1px solid;
+}
+
+.hidden {
+  display: none;
+}
+
+.btn-box {
+  flex-direction: row;
 }
