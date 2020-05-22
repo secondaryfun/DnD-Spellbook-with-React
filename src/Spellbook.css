@@ -34,9 +34,10 @@
   width: 40vh;
   height: 100%;
   top: 0;
-  left: 0;
+  left: -20vh;
   transform-origin: left center;
-  transition: transform 1s ease-in-out, box-shadow 0.65s ease-in-out;
+  transition: transform 1s ease-in-out, box-shadow 0.65s ease-in-out,
+    left 1s ease-in-out;
 }
 
 .front,
@@ -80,41 +81,49 @@
 }
 
 .book-open .front {
+  left: 0vh;
   transform: rotateY(-160deg) scale(1.1);
   box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.2);
 }
 
 .book-open .page1 {
+  left: 0vh;
   transform: rotateY(-150deg) scale(1.1);
   box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.2);
 }
 
 .book-open .page2 {
+  left: 0vh;
   transform: rotateY(-30deg) scale(1.1);
   box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.2);
 }
 
 .book-open .page3 {
+  left: 0vh;
   transform: rotateY(-140deg) scale(1.1);
   box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.2);
 }
 
 .book-open .page4 {
+  left: 0vh;
   transform: rotateY(-40deg) scale(1.1);
   box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.2);
 }
 
 .book-open .page5 {
+  left: 0vh;
   transform: rotateY(-130deg) scale(1.1);
   box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.2);
 }
 
 .book-open .page6 {
+  left: 0vh;
   transform: rotateY(-50deg) scale(1.1);
   box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.2);
 }
 
 .book-open .back {
+  left: 0vh;
   transform: rotateY(-20deg) scale(1.1);
 }
 
@@ -144,6 +153,7 @@
 .front,
 .back {
   background: url("./book-cover.png");
+  background-size: 100% 100%;
   box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.4);
 }
 

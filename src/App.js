@@ -8,7 +8,7 @@ class App extends Component {
     this.state = {
       results: [],
       resultsIndex: -1,
-      count: 10,
+      count: 319,
       spells: [],
     };
   }
@@ -26,7 +26,7 @@ class App extends Component {
     fetch(url)
       .then((result) => result.json())
       .then((data) => {
-        for (let i = 0; i < this.state.count; i++) {
+        for (let i = 0; i < this.state.count; i = i + 9) {
           //get random
           results.push(data.results[i]);
         }
