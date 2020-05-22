@@ -1,6 +1,6 @@
 {
   "name": "patterns",
-  "homepage": "https://modest-mccarthy-f804d1.netlify.app/",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

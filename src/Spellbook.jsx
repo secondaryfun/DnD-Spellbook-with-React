@@ -15,16 +15,18 @@ function Spellbook(props) {
   let openBook = props.openBook;
   let pageRight = props.pageRight;
   let pageLeft = props.pageLeft;
-  console.log(bookView);
-  console.log(props);
 
   return (
     <div className="flex-center spellbook-wrapper">
-      <h1 className={bookView ? "hidden" : ""}>Book of Spells</h1>
+      <h1 className={bookView ? "hidden" : "info-box__header"}>
+        Book of Spells
+      </h1>
       <div className={bookView ? "book" : ""}>
         <div className={bookView ? "back" : ""} onClick={openBook}></div>
         <div onClick={pageRight} className={bookView ? "page6" : ""}>
-          <h1 onClick={openBook}>{name}</h1>
+          <h1 onClick={openBook} className={bookView ? "" : "info-box__header"}>
+            {name}
+          </h1>
           <section className={bookView ? "" : "info-box"}>
             <p>
               <span>castingTime: </span> {castingTime}{" "}

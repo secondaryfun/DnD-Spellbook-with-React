@@ -37,7 +37,7 @@ class Slider extends Component {
   render() {
     return (
       <main className="flex-center Slider-main">
-        {/* <div className="btn-box">
+        <div className="btn-box">
           <SliderBtn
             func={this.getLeftItem}
             i={this.state.index}
@@ -47,7 +47,7 @@ class Slider extends Component {
 
           <button className="btn" onClick={this.toggleView}>
             Change View
-          </button> 
+          </button>
 
           <SliderBtn
             func={this.getRightItem}
@@ -55,7 +55,7 @@ class Slider extends Component {
             max={this.props.items ? this.props.items.length - 1 : 0}
             direction=">"
           />
-        </div>*/}
+        </div>
         <div className={`spellbook-container ${this.state.bookView}`}>
           <Spellbook
             data={
