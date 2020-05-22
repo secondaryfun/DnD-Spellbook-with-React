@@ -8,7 +8,7 @@ class Slider extends Component {
     super();
     this.state = {
       index: 0,
-      bookView: true,
+      bookView: false,
     };
   }
 
@@ -43,6 +43,7 @@ class Slider extends Component {
             i={this.state.index}
             max={this.props.items ? this.props.items.length - 1 : 0}
             direction="<"
+            bookView={this.state.bookView}
           />
 
           <button className="btn" onClick={this.toggleView}>
@@ -54,6 +55,7 @@ class Slider extends Component {
             i={this.state.index}
             max={this.props.items ? this.props.items.length - 1 : 0}
             direction=">"
+            bookView={this.state.bookView}
           />
         </div>
         <div className={`spellbook-container ${this.state.bookView}`}>
