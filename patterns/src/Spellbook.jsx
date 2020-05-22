@@ -2,7 +2,6 @@ import React from "react";
 import "./Spellbook.css";
 
 function Spellbook(props) {
-  let id = props.data.id;
   let castingTime = props.data.casting_time;
   let concentration = props.data.concentration;
   let duration = props.data.duration;
@@ -12,52 +11,54 @@ function Spellbook(props) {
   let name = props.data.name;
   let range = props.data.range;
   let ritual = props.data.ritual;
-  let url = props.data.url;
   let bookView = props.bookView;
+  let openBook = props.openBook;
+  let pageRight = props.pageRight;
+  let pageLeft = props.pageLeft;
   console.log(bookView);
   console.log(props);
 
   return (
-    <div className="flex-center">
+    <div className="flex-center spellbook-wrapper">
       <h1 className={bookView ? "hidden" : ""}>Book of Spells</h1>
       <div className={bookView ? "book" : ""}>
-        <div className={bookView ? "back" : ""}></div>
-        <div className={bookView ? "page6" : ""}>
+        <div className={bookView ? "back" : ""} onClick={openBook}></div>
+        <div onClick={pageRight} className={bookView ? "page6" : ""}>
           <section className={bookView ? "" : "info-box"}>
             <h1>{name}</h1>
             <p>
-              <span>{"castingTime".toUpperCase()}: </span> {castingTime}{" "}
+              <span>castingTime: </span> {castingTime}{" "}
             </p>
             <p>
-              <span>{"concentration".toUpperCase()}: </span> {concentration}{" "}
+              <span>concentration: </span> {concentration}{" "}
             </p>
             <p>
-              <span>{"duration".toUpperCase()}: </span> {duration}{" "}
+              <span>duration: </span> {duration}{" "}
             </p>
             <p>
-              <span>{"index".toUpperCase()}: </span> {index}{" "}
+              <span>index: </span> {index}{" "}
             </p>
             <p>
-              <span>{"level".toUpperCase()}: </span> {level}{" "}
+              <span>level: </span> {level}{" "}
             </p>
             <p>
-              <span>{"material".toUpperCase()}: </span> {material}{" "}
-            </p>
-
-            <p>
-              <span>{"range".toUpperCase()}: </span> {range}{" "}
+              <span>material: </span> {material}{" "}
             </p>
             <p>
-              <span>{"ritual".toUpperCase()}: </span> {ritual}{" "}
+              <span>range: </span> {range}{" "}
             </p>
+            <p>
+              <span>ritual: </span> {ritual}{" "}
+            </p>
+            <footer>{props.index}</footer>
           </section>
         </div>
-        <div className={bookView ? "page5" : ""}></div>
-        <div className={bookView ? "page4" : ""}></div>
-        <div className={bookView ? "page3" : ""}></div>
-        <div className={bookView ? "page2" : ""}></div>
-        <div className={bookView ? "page1" : ""}></div>
-        <div className={bookView ? "front" : ""}>
+        <div onClick={pageLeft} className={bookView ? "page5" : ""}></div>
+        <div onClick={pageRight} className={bookView ? "page4" : ""}></div>
+        <div onClick={pageLeft} className={bookView ? "page3" : ""}></div>
+        <div onClick={pageRight} className={bookView ? "page2" : ""}></div>
+        <div onClick={pageLeft} className={bookView ? "page1" : ""}></div>
+        <div className={bookView ? "front" : ""} onClick={openBook}>
           <h1 className={bookView ? "" : "hidden"}>Book of Spells</h1>
         </div>
       </div>

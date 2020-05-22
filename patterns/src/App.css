@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+h1 {
+  font-family: NIGHTMARE PILLS;
+  text-transform: uppercase;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

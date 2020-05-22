@@ -29,6 +29,11 @@ class Slider extends Component {
       : this.setState({ bookView: true });
   };
 
+  openBook = (e) => {
+    console.dir(e.target);
+    e.target.parentElement.classList.toggle("book-open");
+  };
+
   render() {
     return (
       <main className="flex-center">
@@ -58,7 +63,11 @@ class Slider extends Component {
                 ? this.props.items[this.state.index]
                 : ""
             }
+            openBook={this.openBook}
             bookView={this.state.bookView}
+            pageRight={this.getRightItem}
+            pageLeft={this.getLeftItem}
+            index={this.state.index}
           />
         </div>
       </main>
