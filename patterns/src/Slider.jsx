@@ -36,7 +36,7 @@ class Slider extends Component {
 
   render() {
     return (
-      <main className="flex-center">
+      <main className="flex-center Slider-main">
         <div className="btn-box">
           <SliderBtn
             func={this.getLeftItem}

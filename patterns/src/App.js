@@ -27,6 +27,7 @@ class App extends Component {
       .then((result) => result.json())
       .then((data) => {
         for (let i = 0; i < this.state.count; i++) {
+          //get random
           results.push(data.results[i]);
         }
         return results;
@@ -48,14 +49,7 @@ class App extends Component {
 
   render() {
     // console.log(this.state.spells);
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1>Wizard Spellbook</h1>
-        </header>
-        <Slider items={this.state.spells} />
-      </div>
-    );
+    return <Slider items={this.state.spells} />;
   }
 }
 

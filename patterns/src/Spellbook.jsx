@@ -24,8 +24,8 @@ function Spellbook(props) {
       <div className={bookView ? "book" : ""}>
         <div className={bookView ? "back" : ""} onClick={openBook}></div>
         <div onClick={pageRight} className={bookView ? "page6" : ""}>
+          <h1 onClick={openBook}>{name}</h1>
           <section className={bookView ? "" : "info-box"}>
-            <h1>{name}</h1>
             <p>
               <span>castingTime: </span> {castingTime}{" "}
             </p>

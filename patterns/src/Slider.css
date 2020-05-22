@@ -9,12 +9,13 @@
 }
 
 .info-box {
-  padding: 5px;
+  padding: 1rem;
   border-radius: 5px;
   width: 100%;
   box-shadow: 5px 5px 5px grey;
   margin: 0 1rem;
   border: lightgray 1px solid;
+  background: white;
 }
 
 .hidden {
@@ -23,4 +24,11 @@
 
 .btn-box {
   flex-direction: row;
+}
+
+.Slider-main {
+  background-image: url("./texture-background.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
