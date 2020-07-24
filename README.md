@@ -1,5 +1,5 @@
 # DnD Spellbook
-A spellbook implementation for DnD players.
+React App that serves up DnD spells from the web.  Checkout the alternate view for some fun with CSS.
 
 ## Getting Started
 
