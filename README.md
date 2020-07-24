@@ -3,7 +3,8 @@ A spellbook implementation for DnD players.
 
 ## Getting Started
 
-Go to [link](https://github.com/secondaryfun/Boo-Booty-Checkers) to try the game.  Click Start for instructions.
+```npm install```
+
 
 ### Features
 
